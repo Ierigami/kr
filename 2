@@ -1,0 +1,27 @@
+#include <iostream>;
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	int M, n, four, three;
+	bool F = false;
+	cout << "Введите М - число лопаcтей\n";
+	cin >> M;
+	if (M < 0) {
+		cout << "не может быть отрицательным или нулем";
+	}
+	else {
+		for (int i = (M / 4); i > 0; i--) {
+			if ((M - 4 * i) % 3 == 0) {
+				four = i;
+				three = (M - 4 * i) / 3;
+				F = true;
+				cout << "4 лопасти - " << four << '\n' << "3 лопасти - " << three << '\n';
+				break;
+			}
+		}
+		if (!F) {
+			cout << 0 << '\n' << 0 << '\n';
+		}
+	}
+}
